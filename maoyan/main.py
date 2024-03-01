@@ -57,9 +57,12 @@ def main():
     for i in range(10):
         url = getUrl(i)
         html = getHtml(url)
-        datas = createData(parsePage(html))
-        for data in datas:
-            append_to_csv(data, csv_filename, csvTitle)
+        if html:
+            datas = createData(parsePage(html))
+            for data in datas:
+                append_to_csv(data, csv_filename, csvTitle)
+        else:
+            print("got nothing!")
 
 
 if __name__ == "__main__":
