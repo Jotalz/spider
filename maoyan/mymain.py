@@ -58,7 +58,7 @@ def main():
         url = getUrl(i)
         html = getHtml(url)
         if html:
-            with open(f'output.html{i}', 'w', encoding='utf-8') as output_file:
+            with open(f'output{i}.html', 'w', encoding='utf-8') as output_file:
                 output_file.write(html)
             datas = createData(parsePage(html))
             for data in datas:
